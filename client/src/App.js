@@ -18,8 +18,7 @@ export default function App() {
           console.log(response);
           // Study this response with a breakpoint or log statements
           // and set the response data as the 'movieList' slice of state
-          const list = response.data;
-          setMovieList(list);
+          setMovieList(response.data);
         })
         .catch(error => {
           console.error("Server Error", error);
