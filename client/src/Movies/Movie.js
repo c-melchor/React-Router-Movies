@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export default function Movie(props) {
+  const { push } = useHistory();
   const [movie, setMovie] = useState();
 
   const { id } = useParams();
@@ -51,7 +53,14 @@ export default function Movie(props) {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div
+        onClick={() => {
+          push(`/`);
+        }}
+        className="save-button"
+      >
+        Save
+      </div>
     </div>
   );
 }
